@@ -12,7 +12,7 @@ def delete_book(book_name):
     book_to_delete = None
     for book in books:
         if book.title == book_name:
-            event_to_delete = book
+            book_to_delete = book
             break
 
-    books.remove(event_to_delete)
+    books.remove(book_to_delete)

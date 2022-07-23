@@ -11,9 +11,9 @@ def index():
 def singlebook(index):
   chosenbook = books[int(index)]
   
-  return render_template('books.html', book=chosenbook)
+  return render_template('book.html', book=chosenbook)
 
-@app.route('/book/new')
+@app.route('/books/new')
 def new():
     return render_template('new.html', title='New', books=books)
 
