@@ -5,21 +5,21 @@
 <body>
     <nav>
       <ul>
-        <li clas="navLink"><a href="/orders">Home</a></li>
+        <li clas="navLink"><a href="/books">Home</a></li>
       </ul>
     </nav>
     <hr>
     <h1>All Books!</h1>
   
     <div class="book-container">
-      {% for order in orders %}
+      {% for book in books %}
       <div class="book">
-        <h2>{{ order.title }}</h2>
-        <h3>{{ order.author }}</h3>
-        <h3>{{ order.genre }}</h3>
-        <a href="/orders/{{orders.index(order)}}">Show Book</a>
+        <h2>{{ book.title }}</h2>
+        <h3>{{ book.author }}</h3>
+        <h3>{{ book.genre }}</h3>
+        <a href="/books/{{books.index(book)}}">Show Book</a>
     
-        <form class="form-inline" action="/orders/delete/{{ order.title }}" method="POST">
+        <form class="form-inline" action="/books/delete/{{ book.title }}" method="POST">
             <input type="submit" value="Delete">
           </form>
 

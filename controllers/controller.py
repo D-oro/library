@@ -1,33 +1,33 @@
 from flask import render_template, request, redirect
 from app import app
-from models.orders import orders, add_new_book, delete_book
-from models.order import Order
+from models.books import books, add_new_book, delete_book
+from models.book import Book
 
-@app.route('/orders')
+@app.route('/books')
 def index():
-    return render_template('index.html', title='Jabba the Pizza Hutt', orders=orders)
+    return render_template('index.html', title='library', books=books)
 
-@app.route('/orders/<index>')
+@app.route('/books/<index>')
 def singlebook(index):
-  chosenbook = orders[int(index)]
+  chosenbook = books[int(index)]
   
-  return render_template('order.html', order=chosenbook)
+  return render_template('books.html', book=chosenbook)
 
-@app.route('/order/new')
+@app.route('/book/new')
 def new():
-    return render_template('new.html', title='New', orders=orders)
+    return render_template('new.html', title='New', books=books)
 
 @app.route('/addbook', methods=['POST'])
 def addbook():
     bookTitle = request.form['title']
     bookAuthor = request.form['author']
     bookGenre = request.form['genre']
-    newBook = Order(title=bookTitle, author=bookAuthor, genre=bookGenre)
+    newBook = Book(title=bookTitle, author=bookAuthor, genre=bookGenre)
     add_new_book(newBook)
-    return redirect('/orders')
+    return redirect('/books')
 
-@app.route('/orders/delete/<name>', methods=['POST'])
+@app.route('/books/delete/<name>', methods=['POST'])
 def delete(name):
     delete_book(name)
-    return redirect('/orders')
+    return redirect('/books')
 

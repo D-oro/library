@@ -1,4 +1,4 @@
-class Order():
+class Book():
 
     def __init__(self, title, author, genre):
         self.title = title
