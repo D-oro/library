@@ -2,7 +2,7 @@ from models.book import *
 
 book1 = Book("Talk to your duck - an introduction to coding", "Ducky McDuck", "How-to guides")
 book2 = Book("The Mousetrap", "Kat Kitten", "Mystery")
-book3 = Book("The Chicken or the Egg", "Hen Rooster", "Biography")
+book3 = Book("The Chicken or the Egg", "Hen Rooster", "Autobiography")
 books = [book1, book2, book3]
 
 def add_new_book(book):

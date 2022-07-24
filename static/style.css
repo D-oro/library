@@ -1,0 +1,14 @@
+header {
+  text-align: center;
+}
+
+body {
+    background-color: aliceblue;
+    font-family: Geneva, Verdana, Tahoma, sans-serif;
+    color: rgb(50,50,50);
+  }
+  
+footer {
+  color: rgb(50, 50, 50);
+  text-align: right;
+}

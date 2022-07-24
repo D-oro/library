@@ -3,23 +3,19 @@
 {% block content %}
 
 <body>
-    <nav>
-      <ul>
-        <li clas="navLink"><a href="/books">Home</a></li>
-      </ul>
-    </nav>
-    <hr>
-    <h1>All Books!</h1>
+    <h2>All books in this library:</h2>
   
     <div class="book-container">
       {% for book in books %}
-      <div class="book">
+      <p class="book">
         <b>{{ book.title }}</b>, <i>{{ book.author }}</i>, {{book.genre}}
-        <a href="/books/{{books.index(book)}}">Show Book</a>
-    
+        <button>
+          <a href="/books/{{books.index(book)}}">Show Book</a>
+        </button>
+        <hr>  
         
 
-      </div>
+      </p>
     {% endfor %}
 
 
